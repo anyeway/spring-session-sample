@@ -20,6 +20,8 @@ import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.jdbc.datasource.embedded.ConnectionProperties;
+import org.springframework.jdbc.datasource.embedded.DataSourceFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
@@ -34,6 +36,9 @@ public class DataSourceConfig {
 
 	@Bean
 	public JedisConnectionFactory connectionFactory() {
-		return new JedisConnectionFactory();
+		JedisConnectionFactory factory = new JedisConnectionFactory();
+		factory.setHostName("192.168.230.53");
+		factory.setDatabase(159);
+		return factory;
 	}
 }

@@ -13,6 +13,9 @@
 	<bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
 
 	<!--2-->
-	<bean class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"/>
+	<bean class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="hostName" value="192.168.230.53"></property>
+		<property name="database" value="159"></property>
+	</bean>
 	<!-- end::beans[] -->
 </beans>

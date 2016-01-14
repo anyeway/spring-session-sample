@@ -29,9 +29,12 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableRedisHttpSession
 public class Config {
 
-	@Bean
-	public JedisConnectionFactory connectionFactory() {
-		return  new JedisConnectionFactory();
-	}
+    @Bean
+    public JedisConnectionFactory connectionFactory() {
+        JedisConnectionFactory factory = new JedisConnectionFactory();
+        factory.setHostName("192.168.230.53");
+        factory.setDatabase(159);
+        return factory;
+    }
 }
 // end::class[]

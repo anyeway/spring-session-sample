@@ -10,3 +10,4 @@ target
 out
 .springBeans
 *.rdb
+classes/
