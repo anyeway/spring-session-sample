@@ -25,7 +25,10 @@ public class Config {
 
 	@Bean
 	public JedisConnectionFactory connectionFactory() {
-		return new JedisConnectionFactory(); // <2>
+		JedisConnectionFactory factory = new JedisConnectionFactory();
+		factory.setHostName("192.168.230.53");
+		factory.setDatabase(159);
+		return factory; // <2>
 	}
 }
 // end::class[]
